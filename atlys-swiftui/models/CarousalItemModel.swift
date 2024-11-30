@@ -5,14 +5,18 @@
 //  Created by Emmanuel Biju on 30/11/24.
 //
 
-import SwiftUI
+import Foundation
 
-struct CarousalItemModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct CarousalItemModel: Identifiable, Hashable {
+    let id = UUID()
+    let countryName: String
+    let visaCount: String
+    let image: String
 }
 
-#Preview {
-    CarousalItemModel()
-}
+let carousalItems = [
+    CarousalItemModel(countryName: "India", visaCount: "12K+", image: "india"),
+    CarousalItemModel(countryName: "Malaysia", visaCount: "14K+", image: "malaysia"),
+    CarousalItemModel(countryName: "Qatar", visaCount: "20K+", image: "qatar"),
+    CarousalItemModel(countryName: "Dubai", visaCount: "15K+", image: "dubai"),
+]

@@ -1,5 +1,5 @@
 //
-//  atlys_swiftuiApp.swift
+//  AtlysApp.swift
 //  atlys-swiftui
 //
 //  Created by Emmanuel Biju on 30/11/24.
