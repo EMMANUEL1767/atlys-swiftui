@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct atlys_swiftuiApp: App {
+struct AtlysApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
