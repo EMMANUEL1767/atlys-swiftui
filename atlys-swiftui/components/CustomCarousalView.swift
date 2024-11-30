@@ -75,7 +75,7 @@ struct CustomCarousalView<Content: View, Data: RandomAccessCollection>: View whe
         var scaleValue: CGFloat = 0.2
         
         var cardWidth: CGFloat = 200
-        var spacing: CGFloat = 10
+        var spacing: CGFloat = 4
         var cornerRadius: CGFloat = 12
         var minimumCardWidth: CGFloat = 100
     }

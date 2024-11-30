@@ -14,7 +14,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack(alignment: .center, spacing: 20) {
+        VStack(alignment: .center, spacing: 16) {
             logo
             carousalArea
             titleText
@@ -43,15 +43,16 @@ struct ContentView: View {
                 Image(data.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                VStack(spacing: 4) {
+                VStack(spacing: 2) {
                     Text(data.countryName)
-                        .font(.title3)
+                        .font(.title)
                         .bold()
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, alignment: .center)
                     
                     Text("\(data.visaCount) Visas on Atlys")
                         .font(.caption)
+                        .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .padding(2)
                         .frame(maxWidth: .infinity, alignment:.center)
@@ -72,16 +73,20 @@ struct ContentView: View {
             .fontWeight(.black)
             .multilineTextAlignment(.center)
             .lineSpacing(0)
+            .lineLimit(2)
     }
     
     var loginArea: some View {
         VStack(alignment: .center, spacing: 12) {
             PhoneNumberTextField(selectedCountry: $selectedCountry, phoneNumber: $phoneNumber)
             Button(action: {
-                print("Phone number captured!!")
+                if phoneNumber.count > 9 {
+                    print("Phone number captured!!")
+                }
             }, label: {
                 Text("Continue")
                     .foregroundColor(.white)
+                    .bold()
                     .padding(12)
                     .frame(maxWidth: .infinity)
                     .background(

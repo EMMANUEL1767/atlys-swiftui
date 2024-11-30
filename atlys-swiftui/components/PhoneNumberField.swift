@@ -20,15 +20,16 @@ struct PhoneNumberTextField: View {
                 }) {
                     HStack(spacing: 4) {
                         Text(selectedCountry.flag)
-                            .font(.largeTitle)
+                            .font(.body)
                         Text(selectedCountry.code)
+                            .font(.body)
+                            .bold()
                             .foregroundColor(.primary)
                         Image(systemName: "chevron.down")
                             .resizable()
                             .scaledToFit()
                             .foregroundColor(.gray)
-                            .frame(width: 8, alignment: .center)
-                        
+                            .frame(width: 6, alignment: .center)
 
                     }
                     .padding(.leading, 10)
@@ -37,19 +38,16 @@ struct PhoneNumberTextField: View {
                     CountryPickerView(selectedCountry: $selectedCountry)
                 }
                 
-                Divider()
-                    .frame(height: 30)
-                    .padding(.horizontal, 6)
-                
                 TextField("Enter mobile number", text: $phoneNumber)
+                    .bold()
                     .keyboardType(.phonePad)
                     .autocapitalization(.none)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 8)
                 
             }
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                    .stroke(Color.gray.opacity(0.2), lineWidth: 2)
             )
         }
     }
